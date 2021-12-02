@@ -325,8 +325,9 @@
     </tbody>
 </table>
 
-### Crow's Foot - диаграмма
-![Untitled Diagram drawio](https://user-images.githubusercontent.com/44303944/142692509-0c6500da-8b86-4668-a09c-ec1b15afb07e.png)
+### ER-диаграмма в нотации Чена
+![chen drawio](https://user-images.githubusercontent.com/44303944/144518233-d11c2955-f68d-42ad-a1c4-67bda1fb2db7.png)
+
 
 ### Даталогическая модель
 <img width="932" alt="Снимок экрана 2021-11-20 в 00 14 14" src="https://user-images.githubusercontent.com/44303944/142692604-9a1c1c83-13c9-4c9b-9492-66bb2d7bf173.png">
