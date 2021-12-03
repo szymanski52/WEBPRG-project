@@ -331,3 +331,60 @@
 
 ### Даталогическая модель
 <img width="932" alt="Снимок экрана 2021-11-20 в 00 14 14" src="https://user-images.githubusercontent.com/44303944/142692604-9a1c1c83-13c9-4c9b-9492-66bb2d7bf173.png">
+
+## 4. Проектирование интерфейсов
+### Список интерфейсов
+- Отправка сообщения
+- Регистрация в системе
+- Аутентификация в системе
+- Создание группы
+- Добавление прав персонала сервиса
+- Добавление в исследователи
+- Отправка исследования
+- Просмотр исследований
+- Просмотр исследования
+- Главное меню
+- Создание поста
+- Реакция на другого пользователя
+- Просмотр реакций на себя
+- Страница пользователя
+- Отправка исследования
+
+### Эскизы интерфейсов
+#### 1. Отправка сообщения
+![message_send drawio (1)](https://user-images.githubusercontent.com/44303944/144520573-6bab47db-6030-44e3-ab38-78d69a1e2719.png)
+#### 2. Регистрация в системе
+![reg drawio](https://user-images.githubusercontent.com/44303944/144521445-19ae0b58-9066-4f03-8875-517d9672057d.png)
+#### 3. Аутентификация в системе
+![si drawio](https://user-images.githubusercontent.com/44303944/144521686-507915ea-0384-4fe9-8317-35a3c03011c3.png)
+#### 4. Создание группы
+![cg drawio](https://user-images.githubusercontent.com/44303944/144556940-547d5089-d165-4bb9-9ee4-a3db5905efe5.png)
+#### 5. Добавление прав персонала сервиса
+![astaff drawio](https://user-images.githubusercontent.com/44303944/144557299-ee6a5e1a-481a-4995-8632-4e1c14a845a2.png)
+#### 6. Добавление в исследователи
+![aresr drawio](https://user-images.githubusercontent.com/44303944/144557742-e079194a-4618-4192-8458-0e89bf780593.png)
+#### 7. Отправка исследования
+![subres drawio](https://user-images.githubusercontent.com/44303944/144558094-cb075d12-00f7-4146-ac5f-936da7e32dcd.png)
+#### 8. Просмотр исследований
+![rs drawio](https://user-images.githubusercontent.com/44303944/144559960-a42de11f-fceb-44f9-88d4-ee9c7981e861.png)
+#### 9. Просмотр исследования
+![rch drawio](https://user-images.githubusercontent.com/44303944/144559931-8fffeec3-462b-461f-add1-f0368eba4684.png)
+#### 10. Главное меню
+![Main menu drawio](https://user-images.githubusercontent.com/44303944/144560279-b9cc138b-7ddd-4fa1-aa37-9fbd80b04f9e.png)
+#### 11. Создание поста
+<img width="693" alt="Снимок экрана 2021-12-03 в 10 33 31" src="https://user-images.githubusercontent.com/44303944/144563418-98c29281-6b75-4643-bc79-e54da408043e.png">
+
+#### 12. Реакция на другого пользователя
+<img width="732" alt="Снимок экрана 2021-12-03 в 10 34 08" src="https://user-images.githubusercontent.com/44303944/144563456-9610f691-733f-4ab8-a80f-f5e68e8b95bf.png">
+
+#### 13. Просмотр реакций на себя
+<img width="718" alt="Снимок экрана 2021-12-03 в 10 34 15" src="https://user-images.githubusercontent.com/44303944/144563643-7ae332b1-4de9-4538-bb1e-6a998f9fe052.png">
+
+#### 14. Страница пользователя
+<img width="713" alt="Снимок экрана 2021-12-03 в 10 34 24" src="https://user-images.githubusercontent.com/44303944/144563676-ad1e3a3b-6fd7-4c21-9b4a-8edaa5bd70c0.png">
+
+#### 15. Отправка исследования
+![SR drawio](https://user-images.githubusercontent.com/44303944/144564491-34b04de7-2ee0-4396-ad7e-a181a2cc3848.png)
+
+### Диаграмма интерфейсов
+![webprg UML drawio](https://user-images.githubusercontent.com/44303944/144574515-08cfd140-2a0d-4407-95b3-f440c0bb3834.png)
