@@ -1,0 +1,18 @@
+{% extends 'main/wrapper.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+{% block content %}
+{% if user.is_authenticated %}
+
+<ul>
+    <li>dialogue #1</li>
+    <li>dialogue #2</li>
+    <li>dialogue #3</li>
+    <li>dialogue #4</li>
+    <li>dialogue #5</li>
+</ul>
+<input type="button" value="+start dialogue">
+{% endif %}
+
+{% endblock %}
