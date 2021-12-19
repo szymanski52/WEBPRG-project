@@ -1,0 +1,21 @@
+{% extends 'main/wrapper.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+{% block content %}
+{% if user.is_authenticated %}
+<form method="post" action="{% url 'search' %}" class="form-inline my-2 my-lg-0" id="search_form">
+    {% csrf_token %}
+    <input name="query" class="form-control mr-sm-2" type="search" placeholder="Type username" aria-label="Search"
+           id="id_query">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+<ul>
+{% for i in users %}
+    <li>{{ i.username }}</li>
+{% endfor %}
+</ul>
+<input type="button" value="+start dialogue">
+{% endif %}
+
+{% endblock %}

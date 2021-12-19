@@ -12,4 +12,6 @@ urlpatterns = [
     path('profile', views.render_main, name='profile'),
     path('register', views.register, name='register'),
     path('auth', views.render_auth, name='auth'),
+    path('contacts', views.render_contacts, name='contacts'),
+    path('search', views.search, name='search'),
 ]
