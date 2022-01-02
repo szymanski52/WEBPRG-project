@@ -5,12 +5,14 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+<h2>Private chats</h2>
 <ul>
-    <li>dialogue #1</li>
-    <li>dialogue #2</li>
-    <li>dialogue #3</li>
-    <li>dialogue #4</li>
-    <li>dialogue #5</li>
+{% for i in contacts %}
+    <li>
+        <p class="user-name">{{ i.first_name }} {{ i.last_name }}</p> <p class="user-username">@{{ i.username }}</p>
+        <a href="#"><input type="button" class="btn btn-success" value="Open chat"></a>
+    </li>
+{% endfor %}
 </ul>
 <input type="button" value="+start dialogue">
 {% endif %}

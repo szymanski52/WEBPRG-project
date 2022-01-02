@@ -19,3 +19,7 @@ class UserRegistrationForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     query = forms.CharField(max_length=200)
+
+
+class AddContactForm(forms.Form):
+    contact_id = forms.HiddenInput()

@@ -14,4 +14,5 @@ urlpatterns = [
     path('auth', views.render_auth, name='auth'),
     path('contacts', views.render_contacts, name='contacts'),
     path('search', views.search, name='search'),
+    path('add_contact', views.add_contact, name='add_contact')
 ]

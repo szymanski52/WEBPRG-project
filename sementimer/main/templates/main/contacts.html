@@ -4,6 +4,12 @@
 {% load widget_tweaks %}
 {% block content %}
 {% if user.is_authenticated %}
+<h2>My contacts</h2>
+<ul>
+{% for i in contacts %}
+    <li>{{ i.username }}|{{ i.first_name }}|{{ i.last_name }}</li>
+{% endfor %}
+</ul>
 <form method="post" action="{% url 'search' %}" class="form-inline my-2 my-lg-0" id="search_form">
     {% csrf_token %}
     <input name="query" class="form-control mr-sm-2" type="search" placeholder="Type username" aria-label="Search"
@@ -13,6 +19,11 @@
 <ul>
 {% for i in users %}
     <li>{{ i.username }}</li>
+    <form method="post" action="{% url 'add_contact' %}" class="form-inline my-2 my-lg-0">
+        <input type="hidden" name="contact_id" value="{{ i.id }}">
+    {% csrf_token %}
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">+Add contact</button>
+</form>
 {% endfor %}
 </ul>
 <input type="button" value="+start dialogue">
