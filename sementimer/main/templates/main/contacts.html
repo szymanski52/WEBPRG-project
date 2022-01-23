@@ -6,8 +6,15 @@
 {% if user.is_authenticated %}
 <h2>My contacts</h2>
 <ul>
-{% for i in contacts %}
-    <li>{{ i.username }}|{{ i.first_name }}|{{ i.last_name }}</li>
+{% for i, values in contacts.items %}
+    <li>
+    <a href="{% url 'chat' i %}">
+            <p class="user-name">{{ values.contact.first_name }} {{ values.contact.last_name }}</p>
+            <p class="user-username">@{{ values.contact.username }}</p>
+            <p style="background-color: #1e7e34; color: white; border-radius: 10px; padding-left: 2px; padding-right: 2px" class="user-username">{{ values.rating}}$    </p>
+            <input type="button" class="btn btn-success" value="Open chat">
+        </a>
+    </li>
 {% endfor %}
 </ul>
 <form method="post" action="{% url 'search' %}" class="form-inline my-2 my-lg-0" id="search_form">
@@ -26,7 +33,6 @@
 </form>
 {% endfor %}
 </ul>
-<input type="button" value="+start dialogue">
 {% endif %}
 
 {% endblock %}

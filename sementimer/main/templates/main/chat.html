@@ -1,0 +1,83 @@
+{% extends 'main/wrapper.html' %}
+{% load static %}
+{% load bootstrap4 %}
+{% load widget_tweaks %}
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<main class="content">
+    <div class="container p-0">
+
+		<h1 class="h3 mb-3">Messages</h1>
+
+		<div class="card">
+			<div class="row g-0">
+				<div class="col-12 col-lg-5 col-xl-3 border-right">
+					{% for i, values in contacts.items %}
+					<a href="{% url 'chat' values.contact.id %}" class="list-group-item list-group-item-action border-0">
+						<div class="d-flex align-items-start">
+							<img src="{{ values.pic }}" class="rounded-circle mr-1" alt="{{ values.contact.first_name }} {{ values.contact.last_name }}" width="40" height="40">
+							<div class="flex-grow-1 ml-3">
+								{{ values.contact.first_name }} {{ values.contact.last_name }}
+								<div class="small"><span class="fas fa-circle chat-online"></span> Online</div>
+							</div>
+						</div>
+					</a>
+					{% endfor %}
+					<hr class="d-block d-lg-none mt-1 mb-0">
+				</div>
+				<div class="col-12 col-lg-7 col-xl-9">
+					<div class="py-2 px-4 border-bottom d-none d-lg-block">
+						<div class="d-flex align-items-center py-1">
+							<div class="position-relative">
+								<img src="{{ contact_pic }}" class="rounded-circle mr-1" alt="{{ contact.first_name }} {{ contact.last_name }}" width="40" height="40">
+							</div>
+							<div class="flex-grow-1 pl-3">
+								<strong>{{ contact.first_name }} {{ contact.last_name }}</strong>
+							</div>
+						</div>
+					</div>
+
+					<div class="position-relative">
+						{% for key, message in messages.items %}
+						<div class="{{ message.class }} p-4">
+							<div class="{{ message.class }} pb-4">
+								<div>
+									<img src="{{ message.pic }}" class="rounded-circle mr-1" alt="{{ contact.first_name }} {{ contact.last_name }}" width="40" height="40">
+									<div class="text-muted small text-nowrap mt-2">2:33 am</div>
+								</div>
+								<div class="flex-shrink-1 bg-light rounded py-2 px-3 mr-3">
+									{% if message.class == 'chat-message-left' and contact.first_name %}
+									<div class="font-weight-bold mb-1">{{ contact.first_name }} {{ contact.last_name }}</div>
+									{% elif message.class == 'chat-message-right' %}
+									<div class="font-weight-bold mb-1">You</div>
+									{% else %}
+									<div class="font-weight-bold mb-1">Admin</div>
+									{% endif %}
+									{{ message.text }}
+								</div>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+
+					<div style="position: fixed; bottom: 0; width: 57%; background-color: #ffffff" class="flex-grow-0 py-3 px-4 border-top">
+						<div class="input-group">
+						<form style="width: 95%; display:inline-flex" method="post" action="{% url 'send_message' recipient %}" id="search_form">
+    					{% csrf_token %}
+    						<input name="msg-text" class="form-control" type="text" placeholder="Start typing message text" aria-label="message"
+           					id="message-text">
+    						<button class="btn btn-primary" type="submit">Send</button>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+{% endif %}
+
+{% endblock %}

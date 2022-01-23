@@ -9,12 +9,14 @@
 <ul>
 {% for i in contacts %}
     <li>
-        <p class="user-name">{{ i.first_name }} {{ i.last_name }}</p> <p class="user-username">@{{ i.username }}</p>
-        <a href="#"><input type="button" class="btn btn-success" value="Open chat"></a>
+        <a href="{% url 'chat' i.id %}">
+            <p class="user-name">{{ i.first_name }} {{ i.last_name }}</p>
+            <p class="user-username">@{{ i.username }}</p>
+            <input type="button" class="btn btn-success" value="Open chat">
+        </a>
     </li>
 {% endfor %}
 </ul>
-<input type="button" value="+start dialogue">
 {% endif %}
 
 {% endblock %}

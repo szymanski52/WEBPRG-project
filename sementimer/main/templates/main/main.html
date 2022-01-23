@@ -2,9 +2,12 @@
 {% load static %}
 {% load bootstrap4 %}
 {% block content %}
-    <ul>
-        <li>Registration</li>
-        <li>Authentication</li>
-        <li>Profile</li>
-    </ul>
+    <div class="main_main">
+        <h1 style="padding-top: 20%; color: white; font-size: 50pt; margin-top: -10%">Every second matters</h1>
+        {% if not user.is_authenticated %}
+        <a href="{% url 'auth' %}"><input class="btn btn-light" value="Join us"></a>
+        {% else %}
+        <a href="{% url 'profile' %}"><input class="btn btn-light" value="Profile"></a>
+        {% endif %}
+    </div>
 {% endblock %}

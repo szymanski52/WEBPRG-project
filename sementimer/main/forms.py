@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import Message
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -18,8 +19,12 @@ class UserRegistrationForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField(max_length=200)
-
+    class Meta:
+        model = Message
+        fields = ('text', )
 
 class AddContactForm(forms.Form):
     contact_id = forms.HiddenInput()
+
+class MessageForm(forms.Form):
+    text = forms.CharField(max_length=500)
